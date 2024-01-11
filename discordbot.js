@@ -56,5 +56,22 @@ client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
+// for API
+client.on(Events.InteractionCreate, async interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
+	const { commandName } = interaction;
+	await interaction.deferReply();
+	
+	client.on(Events.InteractionCreate, async interaction => {
+		// ...
+		if (commandName === 'cat') {
+			const catResult = await request('https://aws.random.cat/meow');
+			const { file } = await catResult.body.json();
+			interaction.editReply({ files: [file] });
+		}
+	});
+});
+
 // Log in to Discord with your client's token
 client.login(token);
