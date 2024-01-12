@@ -57,6 +57,7 @@ client.once(Events.ClientReady, readyClient => {
 });
 
 // for API
+/*
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -72,6 +73,6 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	});
 });
-
+*/
 // Log in to Discord with your client's token
 client.login(token);

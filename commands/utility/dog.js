@@ -1,12 +1,12 @@
-/* const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { request } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('dog')
-		.setDescription('Posts random dog image!'),
+		.setDescription('WORK IN PROGRESS'),
 	async execute(interaction) {
-		await interaction.reply('Blong!');
+		await interaction.reply('WOOF WOOF!');
 	},
 };
-*/
