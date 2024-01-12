@@ -1,14 +1,17 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { MessageEmbed } = require('discord.js');
-const { request } = require('undici');
+//const { request } = require('undici');
+const { getDog } = require('../../controllers/dogs.js');
+
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('dog')
 		.setDescription('WORK IN PROGRESS'),
 	async execute(interaction) {
-		const { body } = await request("https://dog.ceo/api/breeds/image/random");
-		//await interaction.reply(body);
-		await interaction.reply("BOW WOW");
+		const doggo = await getDog();
+		// const { body } = await request("https://dog.ceo/api/breeds/image/random");
+		// await interaction.reply("BOW WOW");
+		interaction.reply(doggo);
 	},
 };
