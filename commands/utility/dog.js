@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+/* const { SlashCommandBuilder } = require('discord.js');
 const { request } = require('undici');
 
 module.exports = {
@@ -9,3 +9,4 @@ module.exports = {
 		await interaction.reply('Blong!');
 	},
 };
+*/
