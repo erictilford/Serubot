@@ -7,6 +7,8 @@ module.exports = {
 		.setName('dog')
 		.setDescription('WORK IN PROGRESS'),
 	async execute(interaction) {
-		await interaction.reply('WOOF WOOF!');
+		const { body } = await request("https://dog.ceo/api/breeds/image/random");
+		//await interaction.reply(body);
+		await interaction.reply("BOW WOW");
 	},
 };
